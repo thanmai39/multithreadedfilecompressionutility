@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compression Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            background-color: rgba(9, 188, 224); /* Change this to your preferred color */
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centers the title horizontally */
+        }
+        .navbar-title {
+            color: white;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(9, 188, 224, 0.8);
+            border-radius: 20px;
+        }
+        .tt {
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+        }
+        .container-inside {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+        }
+        input[type="file"], select {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button.remove {
+            background-color: #d9534f;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .message {
+            margin-top: 20px;
+            color: #ff0000;
+        }
+    </style>
+    <script>
+        function removeFile() {
+            const fileInput = document.querySelector('input[type="file"]');
+            fileInput.value = ""; // Clear the file input field
+            document.querySelector('.message').textContent = "File removed. You can select another file.";
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="navbar-title">MULTITHREADED FILE COMPRESSION TOOL</h1>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="tt">File Compression Tool</h1>
+        <div class="container-inside">
+            <form id="file-form" action="/process" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <select name="action" required>
+                    <option value="compress">Compress</option>
+                    <option value="decompress">Decompress</option>
+                </select>
+                <button type="submit">Process File</button>
+                <button type="button" class="remove" onclick="removeFile()">Remove File</button>
+            </form>
+        </div>
+        <div class="message">
+            {{ message }}
+        </div>
+    </div>
+</body>
+</html>
