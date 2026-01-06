@@ -56,3 +56,12 @@ A simple yet effective Run-Length Encoding (RLE) algorithm is used for compressi
 7.Processed chunks are merged in correct order
 
 8.Final output file is generated and downloaded
+
+**Project Structure**
+├── app.py                      
+├── multithreaded_compressor.py 
+├── templates/
+│   └── index.html              
+├── uploads/                   
+├── output/                     
+└── README.md  
