@@ -58,10 +58,17 @@ A simple yet effective Run-Length Encoding (RLE) algorithm is used for compressi
 8.Final output file is generated and downloaded
 
 **Project Structure**
-├── app.py                      
+
+├── app.py
+
 ├── multithreaded_compressor.py 
+
 ├── templates/
-│   └── index.html              
-├── uploads/                   
-├── output/                     
+
+│   └── index.html   
+
+├── uploads/   
+
+├── output/  
+
 └── README.md  
